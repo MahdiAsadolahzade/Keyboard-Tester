@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 
 function Keyboard() {
   const [keys, setKeys] = useState({
-    // تعیین وضعیت اولیه کلیدها
     "`": false,
     "1": false,
     "2": false,
@@ -72,20 +71,19 @@ function Keyboard() {
         
       const key = event.key.toLowerCase();
 
-      const isLeftShift = event.key === "Shift" && event.location === 1; // 1 represents left shift location
-      const isRightShift = event.key === "Shift" && event.location === 2; // 2 represents right shift location
+      const isLeftShift = event.key === "Shift" && event.location === 1; 
+      const isRightShift = event.key === "Shift" && event.location === 2; 
 
-      // تشخیص کنترل چپ و راست
-      const isLeftCtrl = event.key === "Control" && event.location === 1; // 1 represents left control location
-      const isRightCtrl = event.key === "Control" && event.location === 2; // 2 represents right control location
+     
+      const isLeftCtrl = event.key === "Control" && event.location === 1;
+      const isRightCtrl = event.key === "Control" && event.location === 2; 
 
-      // تشخیص آلت چپ و راست
-      const isLeftAlt = event.key === "Alt" && event.location === 1; // 1 represents left alt location
-      const isRightAlt = event.key === "Alt" && event.location === 2; // 2 represents right alt location
+      const isLeftAlt = event.key === "Alt" && event.location === 1; 
+      const isRightAlt = event.key === "Alt" && event.location === 2; 
 
 
       if (keys.hasOwnProperty(key)) {
-        // تغییر وضعیت کلید به نگه‌داشته شده
+        
         setKeys({ ...keys, [key]: true });
 
         if (isLeftShift || isRightShift) {
@@ -105,7 +103,7 @@ function Keyboard() {
     const handleKeyUp = (event) => {
       const key = event.key.toLowerCase();
       if (keys.hasOwnProperty(key)) {
-        // تغییر وضعیت کلید به انتخاب شده
+       
         setKeys({ ...keys, [key]: false });
         if (event.key === "Shift") {
             setKeys({ ...keys, ["r shift"]: false, ["shift"]: false });
@@ -136,7 +134,7 @@ function Keyboard() {
         <h1 className="text-3xl p-5">Keyboard Tester</h1>
 
         <div className="keyboard">
-          {/* ردیف اول */}
+         
           <div className="row">
             <div className={`key${keys["`"] ? " key--held" : ""}${keys["`"] ? " key--selected" : ""}`}>`</div>
             <div className={`key${keys["1"] ? " key--held" : ""}${keys["1"] ? " key--selected" : ""}`}>1</div>
@@ -154,7 +152,7 @@ function Keyboard() {
             <div className={`key key--special${keys["backspace"] ? " key--held" : ""}${keys["backspace"] ? " key--selected" : ""}`}>⟵</div>
           </div>
 
-          {/* ردیف دوم */}
+         
           <div className="row">
             <div className={`key key--special${keys["tab"] ? " key--held" : ""}${keys["tab"] ? " key--selected" : ""}`}>Tab</div>
             <div className={`key${keys["q"] ? " key--held" : ""}${keys["q"] ? " key--selected" : ""}`}>Q</div>
@@ -172,7 +170,7 @@ function Keyboard() {
             <div className={`key key--special${keys["\\"] ? " key--held" : ""}${keys["\\"] ? " key--selected" : ""}`}>\\</div>
           </div>
 
-          {/* ردیف سوم */}
+          
           <div className="row">
             <div className={`key key--special${keys["capslock"] ? " key--held" : ""}${keys["capslock"] ? " key--selected" : ""}`}>Caps Lock</div>
             <div className={`key${keys["a"] ? " key--held" : ""}${keys["a"] ? " key--selected" : ""}`}>A</div>
@@ -189,7 +187,7 @@ function Keyboard() {
             <div className={`key key--special${keys["enter"] ? " key--held" : ""}${keys["enter"] ? " key--selected" : ""}`}>Enter</div>
           </div>
 
-          {/* ردیف چهارم */}
+          
           <div className="row">
             <div className={`key key--special${keys["shift"] ? " key--held" : ""}${keys["shift"] ? " key--selected" : ""}`}>L Shift</div>
             <div className={`key${keys["z"] ? " key--held" : ""}${keys["z"] ? " key--selected" : ""}`}>Z</div>
@@ -205,7 +203,7 @@ function Keyboard() {
             <div className={`key key--special${keys["r shift"] ? " key--held" : ""}${keys["r shift"] ? " key--selected" : ""}`}>R Shift</div>
           </div>
 
-          {/* ردیف پنجم */}
+         
           <div className="row">
             <div className={`key${keys["ctrl"] ? " key--held" : ""}${keys["ctrl"] ? " key--selected" : ""}`}>L Ctrl</div>
             <div className={`key key--icon${keys["meta"] ? " key--held" : ""}${keys["meta"] ? " key--selected" : ""}`}>
