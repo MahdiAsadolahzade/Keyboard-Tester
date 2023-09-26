@@ -1,7 +1,6 @@
 # Keyboard Tester
 
-![Keyboard Tester Screenshot](![Uploading photo_2023-09-26_13-06-45.jpg…]()
-)
+![Keyboard Tester Screenshot](https://codestar.s3.ir-thr-at1.arvanstorage.com/challenge-05.png)
 
 Keyboard Tester is a simple web application that allows you to test and visualize your keyboard input. It provides real-time feedback on which keys you press, making it a handy tool for debugging or simply having some fun with your keyboard.
 
